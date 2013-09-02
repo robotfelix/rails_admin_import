@@ -436,7 +436,7 @@ module RailsAdminImport
           #item.save
           item
         else
-          item = self.new(new_attrs.merge({:as => mass_assignment_role}))
+          item = self.new(new_attrs)
         end
       end
     end
