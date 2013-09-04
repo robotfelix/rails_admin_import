@@ -56,9 +56,9 @@ module RailsAdmin
               # end
 
               associated_map = {}
-              # @abstract_model.model.belongs_to_fields.flatten.each do |field|
-              #   associated_map[field] = field.to_s.classify.constantize.all.inject({}) { |hash, c| hash[c.send(params[field]).to_s] = c.id; hash }
-              # end
+              @abstract_model.model.belongs_to_fields.flatten.each do |field|
+                 associated_map[field] = field.to_s.classify.constantize.all.inject({}) { |hash, c| hash[c.send(params[field]).to_s] = c.id; hash }
+              end
               # @abstract_model.model.many_fields.flatten.each do |field|
               #   associated_map[field] = field.to_s.classify.constantize.all.inject({}) { |hash, c| hash[c.send(params[field]).to_s] = c; hash }
               # end

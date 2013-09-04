@@ -469,7 +469,8 @@ module RailsAdminImport
     def import_belongs_to_data(associated_map, row, map)
       self.class.belongs_to_fields.each do |key|
         if map.has_key?(key) && row[map[key]] != ""
-          self.send("#{key}_id=", associated_map[key][row[map[key]]])
+          label=RailsAdminImport.config.model(key.to_s.classify).label.to_s
+          self.send("#{key}_id=", associated_map[key][row[map[key]][label]])
         end
       end
     end
