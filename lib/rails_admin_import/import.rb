@@ -429,7 +429,6 @@ module RailsAdminImport
       # end
   
       def import_initialize(new_attrs, lookup_field, lookup_value)
-        mass_assignment_role = RailsAdmin.config.attr_accessible_role.call
         # model#where(lookup_field_name => value).first is more ORM compatible (works with Mongoid)
         if lookup_field.present? && (item = self.send(:where, lookup_field => lookup_value).first)
           item.assign_attributes(new_attrs.except(lookup_field.to_sym))

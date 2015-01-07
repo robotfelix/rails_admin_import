@@ -70,7 +70,7 @@ module RailsAdmin
                   format: params[:input_format].to_sym, 
                   lookup: params[:update_lookup],
                   associated_map: associated_map,
-                  role: _attr_accessible_role, 
+                  role: nil,
                   user: _current_user
                 })
               elsif params[:raw_text]
@@ -80,7 +80,7 @@ module RailsAdmin
                   format: params[:input_format].to_sym,
                   lookup: params[:update_lookup],
                   associated_map: associated_map,
-                  role: _attr_accessible_role, 
+                  role: nil,
                   user: _current_user
                 })
               elsif params[:url]
@@ -90,7 +90,7 @@ module RailsAdmin
                   format: params[:input_format].to_sym,
                   lookup: params[:update_lookup],
                   associated_map: associated_map,
-                  role: _attr_accessible_role, 
+                  role: nil,
                   user: _current_user
                 })
               else
